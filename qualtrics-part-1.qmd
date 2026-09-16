@@ -21,3 +21,15 @@ execute:
 ![rough draft of survey in Qualtrics](qualtrics-images/survey%201.png)
 
 ![proof of sharing with instructor](qualtrics-images/survey%202.png)
+
+
+### Appendix
+
+**link to Github Repo** https://github.com/brianvuong1/ibm-6500
+
+
+**link to Published Report** https://brianvuong1.github.io/ibm-6500/qualtrics-part-1.html
+
+
+
+
