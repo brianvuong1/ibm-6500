@@ -1,0 +1,23 @@
+---
+title: "Qualtrics M01-1 Designing Survey "
+author: "Brian Vuong"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-expand: true
+    number-sections: true
+    code-link: true
+    code-overflow: wrap
+    code-tools: true
+    embed-resources: true
+    theme: cosmo
+editor: visual
+execute:
+  freeze: auto
+---
+
+![rough draft of survey in Qualtrics](qualtrics-images/survey%201.png)
+
+![proof of sharing with instructor](qualtrics-images/survey%202.png)
