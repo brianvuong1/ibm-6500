@@ -24,4 +24,4 @@ execute:
 
 **link to Github Repo** https://github.com/brianvuong1/ibm-6500
 
-**link to Published Report** https://brianvuong1.github.io/ibm-6500/qualtrics-part-1.html
+**link to Published Report** https://brianvuong1.github.io/ibm-6500/Vuong-Brian-MR-Educational-Needs-Survey-Qualtrics-Assignment-1.html
