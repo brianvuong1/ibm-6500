@@ -1,0 +1,161 @@
+---
+title: "W05-class-participation"
+author: "Brian V"
+date: '`r format(Sys.time())`'
+format: 
+  html: 
+    toc: true
+    toc-depth: 4
+    number-sections: true
+    code-line-numbers: true
+    code-fold: false
+    code-link: true
+    embed-resources: true
+editor: visual
+execute: 
+  freeze: auto
+  warning: false
+---
+
+## W05-0 — Group Project Introduction, Presentation & Class Participation Activities
+
+### Introduction Chapter (Ch. 1)
+
+- **Background and Managerial Problem Statement / Business Analytics Problem Definition**
+  - Establishes the "why" of the project: what real-world managerial issue motivates the study.
+  - Should be specific, actionable, and framed so it can be translated into a research question.
+- **Project Objectives (PO's)**
+  - Broad statements describing the overall purpose/intent of the project.
+  - Answer: *What is the project trying to accomplish, at a high level?*
+- **Analytics Objectives (AO's)**
+  - Narrower, measurable objectives that operationalize the PO's.
+  - Bridge between the managerial problem and specific research questions/hypotheses (this connects directly to W05-1).
+- **Significance of the Project**
+  - Why the project matters — theoretical contribution, managerial/practical implications, or both.
+
+### Class Activities
+
+- **Group Presentation & Peer Review**
+  - Each group presents their project introduction (problem statement, PO's, AO's, significance).
+  - Peers provide structured feedback (clarity of problem, feasibility, alignment between PO's/AO's).
+- **Note Taking with Quarto**
+  - Practice using `.qmd` files for structured, reproducible note-taking.
+  - Use headers (`#`, `##`, `###`), bullet lists, and callout blocks to organize content.
+  - Render to HTML/PDF to check formatting.
+
+::: callout-note
+Quarto tip: use `##` for major topic breaks and `###` for sub-points — this keeps the rendered TOC clean and navigable.
+:::
+
+------------------------------------------------------------------------
+
+## W05-1 — CEP 03: Literature Review and RQ/Hypotheses (Part of Ch. 2) for Survey Design
+
+### From AO to RQ or Hypotheses
+
+- Analytics Objectives (AO's) are translated into formal **Research Questions (RQ)** or **Hypotheses (H)**.
+- RQs are used for more exploratory work; Hypotheses are used when directional/relational predictions can be made from theory.
+- Chain of logic: **Managerial Problem → PO → AO → RQ/Hypothesis**
+
+### Follow the Contents for Basic Research
+
+- Literature review should ground each AO in existing theory/prior findings.
+- Identify gaps in the literature that justify the current study.
+- Ensure constructs referenced in hypotheses are clearly defined and supported by citations.
+
+### Deliverable
+
+- **CEP03 – Revised Ch. 1 and Literature Review for Survey Design**
+  - **Due: 9/28**
+  - Incorporates instructor/peer feedback from W05-0 presentations.
+
+------------------------------------------------------------------------
+
+## W05-2 — M07: Measurement & Scaling
+
+### Fundamentals and Comparative Scaling (Ch. 9)
+
+- **Four Types of Scales**
+  - **Nominal** — categories only, no order (e.g., gender, brand names).
+  - **Ordinal** — ranked categories, unequal intervals (e.g., satisfaction rank).
+  - **Interval** — ordered, equal intervals, no true zero (e.g., Likert scales, temperature °F).
+  - **Ratio** — ordered, equal intervals, true zero point (e.g., age, income, sales).
+- **Comparative Scaling**
+  - Respondents directly compare objects against one another (e.g., paired comparison, rank order, constant sum).
+  - Produces relative/ordinal data — good for competitive comparisons, less generalizable beyond the objects compared.
+
+::: callout-important
+**Quiz for Ch. 9 (Assigned) — Due 9/24**
+:::
+
+### Noncomparative Scaling Techniques (Ch. 10)
+
+- **Continuous vs. Itemized Scales**
+  - *Continuous (graphic) rating scale*: respondents mark a point along a continuous line.
+  - *Itemized rating scale*: respondents choose from a limited number of ordered categories (e.g., 5-point Likert).
+- **Reliability & Validity**
+  - **Reliability** — consistency of measurement (test-retest, internal consistency/Cronbach's alpha, alternative forms).
+  - **Validity** — whether the scale measures what it's intended to measure (content, criterion, construct validity).
+
+::: callout-important
+**Quiz for Ch. 10 (Assigned) — Due 9/24**
+:::
+
+------------------------------------------------------------------------
+
+## W05-3 — SEM01: Measurement Model – Theory (1)
+
+### Test of Multi-Item Scales
+
+- **Regression vs. SEM**
+  - Regression: tests relationships between observed variables; single equation, no explicit measurement error modeling.
+  - SEM: tests relationships among *latent constructs* while simultaneously modeling measurement error; combines factor analysis + path analysis.
+
+### Exploratory Factor Analysis (EFA)
+
+- Conducted with software (e.g., **IBM SPSS**).
+- Used to uncover underlying factor structure among a set of observed items before confirmatory testing.
+
+### Covariance-Based SEM (CB-SEM)
+
+- Conducted with software (e.g., **IBM AMOS**).
+- Two-step approach:
+  1.  **Measurement Model Testing**
+      - **Reliability** — internal consistency of indicators for each latent construct.
+      - **Validity**
+        - **Convergent Validity** — indicators of the same construct correlate highly (e.g., AVE, factor loadings).
+        - **Discriminant Validity** — constructs are empirically distinct from one another (e.g., AVE vs. squared correlations).
+  2.  **Structural Model Testing**
+      - **Test of Hypotheses** — path coefficients between latent constructs are evaluated for significance and direction.
+
+### Articles
+
+- **Anderson & Gerbing (1988)** — foundational article on the two-step SEM approach (measurement model → structural model).
+  - [SEM01 – Take Notes for Anderson & Gerbing (1988)](https://canvas.cpp.edu/courses/143274/modules/items/5548903)
+  - **Due: 9/29**
+
+------------------------------------------------------------------------
+
+## W05-4 — Qualtrics M02: Setting Up an Experimental Design (Assigned)
+
+1.  **Random Assignment**
+    - Randomly assigning respondents to different conditions/treatment groups to reduce bias and support causal inference.
+2.  **Branching**
+    - Directing respondents down different survey paths based on their prior responses.
+3.  **Experimental Design**
+    - Structuring manipulated conditions (IVs) within the survey to test causal effects on outcomes (DVs).
+4.  **Piped Text**
+    - Dynamically inserting a respondent's earlier answer (or other data) into later questions for personalization/consistency.
+5.  **Carryover**
+    - Carryover (order) effects — when exposure to earlier questions/conditions influences responses to later ones; addressed via randomization/counterbalancing.
+
+------------------------------------------------------------------------
+
+## Summary Timeline of Deliverables
+
+| Item                                     | Due Date |
+|------------------------------------------|----------|
+| Quiz for Ch. 9                           | 9/24     |
+| Quiz for Ch. 10                          | 9/24     |
+| CEP03 – Revised Ch.1 & Literature Review | 9/28     |
+| SEM01 – Anderson & Gerbing (1988) Notes  | 9/29     |
