@@ -324,5 +324,9 @@ A useful workflow would be:
 
 Replace the placeholders below with the final URLs after the QMD has been pushed and GitHub Pages has been published.
 
-- **GitHub repository:** [YOUR-GITHUB-REPOSITORY-URL](https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
-- **GitHub Pages HTML:** [YOUR-GITHUB-PAGES-URL](https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/M05-Visualizing-Data-with-Tables-for-MSDM-CEP.html)
+- **GitHub repository:** <https://github.com/brianvuong1/ibm-6500>
+
+- **GitHub Pages HTML:** [\
+  https://brianvuong1.github.io/ibm-6500/M05-Visualizing-Data.html](https://brianvuong1.github.io/ibm-6500/M05-Visualizing-Data.html)
+
+  \
