@@ -1,0 +1,328 @@
+---
+title: "M05-Visualizing Data with Tables for MSDM CEP"
+author: "Brian Vuong"
+date: '`r format(Sys.time(), "%B %d, %Y")`'
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    code-link: true
+    code-tools: true
+    code-fold: true
+    code-overflow: wrap
+    code-copy: true
+    embed-resources: true
+    theme: cosmo
+    html-math-method: katex
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+  message: false
+---
+
+::: callout-note
+## Dataset note
+
+This report uses the `pizzaplace` dataset included with the **gt** package because CEP project data were not supplied with this assignment. The dataset is a synthetic, one-year pizza-sales dataset with 49,574 rows and seven variables, including order ID, date, pizza name, size, category, and price. It is suitable for demonstrating descriptive tables, grouping, and embedded mini-charts.
+:::
+
+> **Customer-oriented framing:** The goal of this report is to help a decision-maker answer practical questions about what the data say, not simply to display code or package features.
+
+## 1. Prompt: What did you learn from the videos?
+
+### Prompt
+
+**Summarize what you learned from the videos you watched.**
+
+### Response
+
+The videos showed that a table is not just a place to print a spreadsheet. With **gt**, a table can become a polished communication tool that combines a clear hierarchy, descriptive labels, formatted values, source notes, and visual emphasis. I learned to think about a table as a designed view of the data: first wrangle the information into the comparison I want, then use `gt()` to control how the result is communicated.
+
+A second lesson was the value of **small visualizations inside a table**. The `gtExtras` package adds functions that can place sparklines, bars, distributions, and other compact graphics directly into table cells. For example, `gt_plt_sparkline()` converts a list-column of numeric values into a small trend graphic, while `gt_plt_dist()` can show a distribution in each row. This makes it possible to scan both numbers and patterns without switching between a chart and a separate table.
+
+The broader lesson for data communication is to start with the question a reader needs answered. Formatting should support that question rather than decorate the output for its own sake.
+
+## 2. Prompt: What did you like about the `gt` and `gt` and `gtExtras` packages?
+
+### Prompt
+
+**What did you like about the `gt` and `gt` and `gtExtras` packages demonstrated in the videos?**
+
+### Response
+
+I liked the way the two packages work together. **gt** provides the table structure and precise formatting: titles, subtitles, labels, spanners, footnotes, source notes, number formats, and cell styling. **gtExtras** then extends that structure with compact plots, so the table can carry both exact values and visual signals in the same place. The result feels closer to a small dashboard or presentation-ready exhibit than a raw data frame.
+
+I also like the reproducible workflow. Instead of manually formatting a table in a word processor or slide program, the table can be regenerated whenever the data change. That matters in an analytics project because the final exhibit remains connected to the analysis code.
+
+::: callout-tip
+### Design principle
+
+Use formatting to make the intended comparison easier to see. A reader should not have to decode the table before finding the answer.
+:::
+
+## 3. Prompt: How do tables complement charts?
+
+### Prompt
+
+**How do tables complement charts for data visualization?**
+
+### Response
+
+Tables and charts answer related but different questions. A chart is efficient for seeing patterns such as ranking, change over time, differences in magnitude, or unusual observations. A table is better for recovering the exact values behind those patterns. In other words, the chart supports **pattern recognition**, while the table supports **precise lookup and comparison**.
+
+Using both can reduce the weaknesses of either format alone. For example, a chart may show that one pizza category generates more revenue than another, while a table can report the exact revenue, number of pizzas sold, average order value, and percentage of total revenue. A table with an embedded sparkline goes one step further by combining the exact number with a quick visual cue in the same exhibit.
+
+## 4. Prompt: When would you prefer tables rather than charts?
+
+### Prompt
+
+**Under what circumstances would you prefer to use tables rather than charts to visualize data?**
+
+### Response
+
+I would prefer a table when the audience needs exact values, when several metrics need to be compared across the same groups, or when the number of categories is large enough that a chart becomes difficult to read. Tables are especially useful for reporting KPIs, financial figures, rates, counts, or other values that a reader may need to quote or use in a later decision.
+
+I would also choose a table when the differences are small and exact numbers matter more than a broad visual impression. A chart is usually more effective when the primary question is about shape, trend, or distribution; a table becomes more useful when the primary question is **"What exactly is the value?"**
+
+## 5. Prompt: Use the MSDM CEP data (or `pizzaplace`) to create a descriptive table
+
+### Prompt
+
+**Use the data for your MSDM CEP. If you don't have data yet, use the `pizzaplace` dataset. Pick variables relevant to your Analytics Objectives and share descriptive statistics using `gt` and `gtExtra` functions together to show numbers and small charts in one table. Incorporate titles, a stub-head label, relabeled variable names, source notes, footnotes, a spanner column label, two-decimal formatting, currency signs where applicable, and visual emphasis.**
+
+### Response: Analytics objective for the demonstration
+
+For this demonstration, the practical analytics objective is: **compare pizza categories on sales volume and revenue contribution while also showing whether revenue is consistently distributed across the year.**
+
+The table below groups the sales data by pizza category. It reports total pizzas sold, total revenue, average selling price, revenue share, and a compact monthly revenue sparkline. The combination is intended to answer both magnitude questions and trend questions in one place.
+
+```{r setup}
+#| label: setup
+#| include: false
+
+library(dplyr)
+library(tidyr)
+library(lubridate)
+library(gt)
+library(gtExtras)
+library(scales)
+
+data("pizzaplace", package = "gt")
+
+monthly_by_category <- pizzaplace %>%
+  mutate(
+    order_date = as.Date(date),
+    order_month = floor_date(order_date, unit = "month")
+  ) %>%
+  group_by(type, order_month) %>%
+  summarise(
+    revenue = sum(price, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  complete(
+    type,
+    order_month = seq(
+      floor_date(min(as.Date(pizzaplace$date)), "month"),
+      floor_date(max(as.Date(pizzaplace$date)), "month"),
+      by = "month"
+    ),
+    fill = list(revenue = 0)
+  ) %>%
+  arrange(type, order_month)
+
+pizza_summary <- pizzaplace %>%
+  group_by(type) %>%
+  summarise(
+    pizzas_sold = n(),
+    revenue = sum(price, na.rm = TRUE),
+    avg_price = mean(price, na.rm = TRUE),
+    .groups = "drop"
+  ) %>%
+  left_join(
+    monthly_by_category %>%
+      group_by(type) %>%
+      summarise(monthly_revenue = list(revenue), .groups = "drop"),
+    by = "type"
+  ) %>%
+  mutate(
+    revenue_share = revenue / sum(revenue)
+  ) %>%
+  arrange(desc(revenue))
+```
+
+```{r category-table}
+#| label: tbl-category-dashboard
+#| tbl-cap: "Pizza category performance: exact values plus monthly revenue trends"
+#| fig-alt: "A gt table comparing pizza categories with sales, revenue, revenue share, and embedded monthly sparkline charts."
+
+pizza_table <- pizza_summary %>%
+  gt(rowname_col = "type") %>%
+  tab_header(
+    title = md("**Pizza Category Performance**"),
+    subtitle = md("Annual sales volume, revenue contribution, pricing, and monthly revenue trend")
+  ) %>%
+  tab_stubhead(label = "Pizza Category") %>%
+  tab_spanner(
+    label = "Sales & Revenue",
+    columns = c(pizzas_sold, revenue, revenue_share)
+  ) %>%
+  tab_spanner(
+    label = "Pricing & Trend",
+    columns = c(avg_price, monthly_revenue)
+  ) %>%
+  cols_label(
+    pizzas_sold = "Pizzas Sold",
+    revenue = "Revenue",
+    revenue_share = "Revenue Share",
+    avg_price = "Avg. Selling Price",
+    monthly_revenue = "Monthly Revenue Trend"
+  ) %>%
+  fmt_number(
+    columns = c(pizzas_sold),
+    decimals = 0
+  ) %>%
+  fmt_currency(
+    columns = c(revenue, avg_price),
+    currency = "USD",
+    decimals = 2
+  ) %>%
+  fmt_percent(
+    columns = revenue_share,
+    decimals = 2
+  ) %>%
+  gt_plt_sparkline(
+    column = monthly_revenue,
+    type = "ref_mean",
+    same_limit = TRUE,
+    label = FALSE
+  ) %>%
+  data_color(
+    columns = revenue,
+    colors = scales::col_numeric(
+      palette = c("#F2F2F2", "#2C7FB8"),
+      domain = NULL
+    )
+  ) %>%
+  tab_footnote(
+    footnote = "Revenue share is each category's share of total dataset revenue.",
+    locations = cells_column_labels(columns = revenue_share)
+  ) %>%
+  tab_footnote(
+    footnote = "Sparkline shows monthly revenue; the reference line indicates the category's mean monthly revenue.",
+    locations = cells_column_labels(columns = monthly_revenue)
+  ) %>%
+  tab_source_note(
+    source_note = "Source: gt package, pizzaplace built-in dataset."
+  ) %>%
+  tab_source_note(
+    source_note = "Note: Values are descriptive statistics for the assignment demonstration and are not intended to represent the user's final CEP dataset."
+  ) %>%
+  opt_row_striping() %>%
+  tab_options(
+    table.width = pct(100),
+    data_row.padding = px(7)
+  )
+
+pizza_table
+```
+
+Table @tbl-category-dashboard is designed for a presentation because a reader can scan the exact figures and the embedded mini-chart at the same time. The visual encoding is deliberately compact: the sparkline shows the annual pattern without taking up the space of a full chart.
+
+::: panel-tabset
+### What the table communicates
+
+- **Pizzas Sold** answers the volume question.
+- **Revenue** answers the dollar contribution question.
+- **Revenue Share** puts category revenue into context.
+- **Average Unit Price** and **Average Line Revenue** add pricing information.
+- **Monthly Revenue Trend** adds a visual signal without requiring a separate chart.
+
+### Why the design is useful
+
+The table uses a hierarchy from broad business result to supporting detail. Exact values remain visible, while color and sparklines help the eye locate larger values and recurring patterns.
+:::
+
+## 6. Prompt: Why is this table worth adding to the MSDM project?
+
+### Prompt
+
+**Explain why the table is worth adding to your MSDM project written report or presentation slides.**
+
+### Response
+
+This table is worth adding because it turns several related KPIs into a single presentation-ready exhibit. For a written report, it gives the reader exact values that can be referenced in the discussion. For presentation slides, the embedded sparkline makes the exhibit more visual while preserving the numeric detail needed to support a claim.
+
+Most importantly, the table supports a decision-oriented conversation. A stakeholder can ask which category contributes the most revenue, whether the category rankings are consistent with sales volume, and whether revenue appears stable or variable across the year. Those questions can be answered directly from one exhibit rather than from several disconnected outputs.
+
+::: callout-important
+### Interpretation reminder
+
+This demonstration uses the built-in `pizzaplace` data because the CEP dataset was not supplied here. Before submitting a final CEP version, replace `pizzaplace` with the project dataset and revise the selected variables so the table directly matches the project's Analytics Objectives.
+:::
+
+## 7. Prompt: Apply Quarto features that improve the HTML report
+
+### Prompt
+
+**Implement as many HTML features as possible, including text formatting, headings, lists, blockquotes, tabsets/tables, cross-referencing, footnotes, callouts, table of contents, toc-depth/toc-expand, section numbering, self-contained output, HTML theme options, hiding code, code overflow, and code tools.**
+
+### Response
+
+This report intentionally uses a range of Quarto features rather than treating the QMD as a plain script. The YAML enables automatic section numbering, a navigable table of contents, code linking, code tools, folded code, wrapped code overflow, and embedded resources for a self-contained HTML file. These are native Quarto HTML options.
+
+The report also uses:
+
+1.  **Headings and subheadings** to separate each assignment prompt from its response.
+2.  **Bold and italic text** for emphasis.
+3.  **Lists** for scan-friendly explanations.
+4.  **Blockquotes** for the customer-oriented framing.
+5.  **A panel tabset** for a compact design explanation.
+6.  **A cross-reference** to Table @tbl-category-dashboard.
+7.  **Footnotes and table footnotes** to explain definitions without interrupting the main text. See \[\^1\] for an example.
+8.  **Callout blocks** to distinguish important notes, tips, and interpretation reminders.
+9.  **A self-contained HTML configuration** through `embed-resources: true`.
+10. **Code hiding and code tools** so readers can focus on the report while still being able to inspect the analysis.
+
+::: callout-note
+### Why self-contained HTML matters
+
+With `embed-resources: true`, Quarto can package linked images, styles, scripts, and other page resources into the HTML itself, reducing the need to carry a companion `_files` directory when the report is shared.
+:::
+
+## 8. Prompt: How would you adapt this analysis for the final CEP dataset?
+
+### Prompt
+
+**Use the data for your MSDM CEP and pick variables relevant to your Analytics Objectives.**
+
+### Response
+
+For the final CEP version, I would replace `pizzaplace` with the project's actual data source, preserve the same reproducible wrangling-to-`gt` workflow, and choose grouped variables that map directly to the CEP questions. The key design choice would be to keep only the metrics that a stakeholder can act on or interpret.
+
+A useful workflow would be:
+
+- identify the business question;
+- select the outcome and comparison variables;
+- group and summarise the data;
+- check that the descriptive statistics are correct;
+- build the `gt` table;
+- add the smallest visual element that improves interpretation; and
+- use the final table as an exhibit in the written report or presentation.
+
+## 10. Appendix: Submission Links
+
+### Prompt
+
+**Add an Appendix Section to the Quarto and provide clickable links to both URLs.**
+
+### Response
+
+Replace the placeholders below with the final URLs after the QMD has been pushed and GitHub Pages has been published.
+
+- **GitHub repository:** [YOUR-GITHUB-REPOSITORY-URL](https://github.com/YOUR-USERNAME/YOUR-REPOSITORY)
+- **GitHub Pages HTML:** [YOUR-GITHUB-PAGES-URL](https://YOUR-USERNAME.github.io/YOUR-REPOSITORY/M05-Visualizing-Data-with-Tables-for-MSDM-CEP.html)
