@@ -1,0 +1,30 @@
+---
+title: "Name of Assignment"
+author: "Brian Vuong"
+date: '`r format(Sys.time(), "%B %d, %Y")`'
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    code-link: true
+    code-tools: true
+    code-fold: true
+    code-overflow: wrap
+    code-copy: true
+    embed-resources: true
+    theme: cosmo
+    html-math-method: katex
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+---
+
+# Appendix
+
+- [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
+- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/Sem-01-Take-Notes.html)
