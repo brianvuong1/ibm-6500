@@ -137,3 +137,9 @@ Branch Logic ensures that participants see only their assigned advertisement con
 The revised social media questions also provide more detailed information by allowing respondents to identify all platforms they use and report their usage for each platform separately.
 
 Finally, three additional questionnaire improvements were made by improving question wording, simplifying response choices, and adding an additional response option.
+
+
+# Appendix
+
+- [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
+- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/Qualtrics-M02.html)
