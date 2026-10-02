@@ -1,0 +1,56 @@
+---
+title: "Notes-Week-6"
+author: "Brian Vuong"
+date: 'today'
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    code-link: true
+    code-tools: true
+    code-fold: true
+    code-overflow: wrap
+    code-copy: true
+    embed-resources: true
+    theme: cosmo
+    html-math-method: katex
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+---
+
+# Announcement
+
+- Google Certifications free for CPP Student
+
+  - Dr Jung going over Spring 2027 courses and electives
+
+- Website portfolio project due week 16 - recorded presentation put on Canvas
+
+- CEP Written Report Template adjustment for Ch 1
+
+  - How AO will address PO
+
+- all team members will work on Digitial Marketing plan implementation during Summer
+
+- 
+
+# Overview of Week 6
+
+- going over Syllabus
+
+# Assignments
+
+# CEP Presentation on CEP 03 - Revision of Ch 1 and Lit review of Ch 2
+
+# CEP Group Meeting
+
+# Appendix
+
+- [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
+- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/week-06-notes.html)
