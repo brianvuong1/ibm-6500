@@ -1,0 +1,704 @@
+---
+title: "Implementing and Optimizing Digital Marketing"
+subtitle: "Wellness Ranch Therapy Capstone Project"
+author: "Brian Vuong"
+institute: "IBM 6500, Cal Poly Pomona"
+date: "`r Sys.Date()`"
+format:
+  revealjs:
+    theme: serif
+    width: 1600
+    height: 900
+    footer: "Wellness Ranch Therapy Digital Marketing Optimization"
+    transition: slide
+    transition-speed: default
+    incremental: false
+    toc: true
+    toc-depth: 1
+    slide-number: true
+    scrollable: true
+    smaller: true
+    code-fold: false
+    code-overflow: wrap
+    number-sections: false
+    embed-resources: true
+editor: visual
+execute:
+  echo: true
+  freeze: auto
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(knitr)
+
+theme_set(
+  theme_minimal(base_size = 24) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      legend.position = "bottom"
+    )
+)
+
+set.seed(6500)
+```
+
+```{=html}
+<style>
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+  color: #356859;
+}
+
+.reveal a {
+  color: #4f8f7b;
+}
+
+.highlight {
+  color: #356859;
+  font-weight: bold;
+}
+
+.small-text {
+  font-size: 0.75em;
+}
+</style>
+```
+
+# Implementing and Optimizing Digital Marketing {#implementing-and-optimizing-digital-marketing}
+
+## Wellness Ranch Therapy Capstone Project
+
+**Central question:** Which website, SEO, analytics, and search advertising improvements will most effectively increase visibility, engagement, and meaningful conversions for Wellness Ranch Therapy?
+
+::: notes
+Introduce Wellness Ranch Therapy and explain that the presentation focuses on practical digital-marketing improvements that can increase awareness, engagement, and meaningful client conversions.
+:::
+
+# Table of Contents
+
+::: incremental
+- Introduction and business problem
+- Analytics objective
+- Consumer behavior concepts
+- Data and sampling
+- Data wrangling and measures
+- Proposed analytics methods
+- Demonstration chart
+- Implementation plan
+- Limitations and next steps
+- References and appendix
+:::
+
+# Introduction {#introduction}
+
+## Business Problem
+
+Wellness Ranch Therapy needs a sustainable digital-marketing system that can help potential clients:
+
+::::: columns
+::: {.column width="50%"}
+- Discover the organization online
+- Understand the services offered
+- Build trust in the organization
+- Navigate the website
+- Request information or services
+- Stay engaged over time
+:::
+
+::: {.column width="50%"}
+The organization may need stronger connections between:
+
+- Website content
+- Search-engine visibility
+- Digital advertising
+- Social-media communication
+- Analytics tracking
+- Conversion goals
+:::
+:::::
+
+::: fragment
+The goal is to improve digital visibility while encouraging meaningful engagement and measurable conversions.
+:::
+
+# Analytics Objective {#analytics-objective}
+
+## Primary Objective
+
+> Evaluate which digital marketing improvements most effectively increase visibility, engagement, and meaningful conversions for Wellness Ranch Therapy.
+
+### Supporting Questions
+
+::: incremental
+1.  How are potential clients currently discovering Wellness Ranch Therapy?
+2.  Which website pages receive the greatest amount of attention?
+3.  Which search terms and channels produce qualified traffic?
+4.  Which website actions indicate meaningful engagement?
+5.  Which campaigns generate inquiries or other conversions?
+6.  How can digital marketing performance be measured consistently?
+:::
+
+# Why This Matters
+
+A data-driven digital-marketing system could help Wellness Ranch Therapy:
+
+::: incremental
+- Increase awareness among relevant audiences
+- Improve search-engine visibility
+- Make the website easier to navigate
+- Build trust with potential clients
+- Increase meaningful inquiries and conversions
+- Prioritize limited marketing resources
+- Evaluate whether digital improvements are working
+:::
+
+::: notes
+Emphasize that the purpose is not simply to increase website traffic. The purpose is to attract relevant visitors and encourage actions that support the organization's mission.
+:::
+
+# Consumer Behavior Framework
+
+## Digital Customer Journey
+
+Potential clients may move through several stages:
+
+``` text
+Awareness
+   ↓
+Search and Discovery
+   ↓
+Website Visit
+   ↓
+Trust and Evaluation
+   ↓
+Inquiry or Conversion
+   ↓
+Continued Engagement
+```
+
+::: fragment
+Each stage requires different content, communication, and performance measures.
+:::
+
+# Relevant Concepts
+
+::::: columns
+::: {.column width="50%"}
+### Customer Journey
+
+Potential clients may use multiple channels before taking action.
+
+### Search Behavior
+
+Search terms can reveal questions, needs, and intent.
+
+### Trust Formation
+
+Clear information and credible communication can reduce uncertainty.
+:::
+
+::: {.column width="50%"}
+### Conversion
+
+A conversion may include an inquiry, form submission, call, or appointment request.
+
+### Engagement
+
+Engagement includes meaningful actions rather than page views alone.
+
+### Retention
+
+Continued communication may support long-term relationships.
+:::
+:::::
+
+# Adequacy of Available Information
+
+## Initial Data Assessment
+
+| Information area | Potential use | Expected limitation |
+|:-----------------------|:-----------------------|:-----------------------|
+| Website analytics | Measure traffic and user behavior | May not explain visitor intent |
+| Search Console data | Examine search visibility and queries | Historical data may be limited |
+| Website content | Evaluate clarity and relevance | Content quality can be subjective |
+| Advertising data | Measure impressions, clicks, and cost | Clicks may not become conversions |
+| Social media data | Measure reach and engagement | Engagement does not equal qualified leads |
+| Inquiry records | Measure meaningful outcomes | Records may be incomplete |
+| Stakeholder interviews | Understand goals and barriers | Responses may reflect personal perceptions |
+
+# Need for Additional Analysis
+
+Additional analysis may be necessary if:
+
+::: incremental
+- Website traffic is not connected to conversion actions
+- Analytics tracking is incomplete
+- Search terms are unavailable
+- Conversion definitions are unclear
+- Advertising costs are missing
+- Inquiry records are stored inconsistently
+- Different platforms use different measures
+- Website visitors cannot be distinguished from qualified prospects
+:::
+
+::: callout-warning
+High traffic, impressions, or social-media engagement does not necessarily mean that the organization is receiving more meaningful inquiries.
+:::
+
+# Data and Sampling {#data-and-sampling}
+
+## Proposed Data Sources
+
+::: incremental
+1.  Google Analytics or website analytics
+2.  Google Search Console
+3.  Website content and page structure
+4.  Google Ads or search-advertising reports
+5.  Social-media performance data
+6.  Inquiry, contact, or referral records
+7.  Stakeholder interviews
+8.  Existing marketing materials
+9.  Competitor and search-result review
+:::
+
+## Unit of Analysis
+
+The analysis may use:
+
+- One website session
+- One website visitor
+- One page
+- One search query
+- One advertising campaign
+- One conversion
+- One week or month
+- One audience segment
+
+# Data Wrangling Plan
+
+``` text
+Collect data from digital platforms
+   ↓
+Standardize dates and channel names
+   ↓
+Remove duplicate records
+   ↓
+Identify missing values
+   ↓
+Define meaningful conversions
+   ↓
+Combine website, search, advertising, and inquiry data
+   ↓
+Calculate performance measures
+   ↓
+Validate the final analysis dataset
+```
+
+::: scrollable
+| Variable           | Description               | Example        |
+|:-------------------|:--------------------------|:---------------|
+| `date`             | Date of activity          | 2026-09-12     |
+| `channel`          | Source of traffic         | Organic Search |
+| `sessions`         | Website visits            | 425            |
+| `engaged_sessions` | Meaningful visits         | 280            |
+| `conversions`      | Completed desired actions | 18             |
+| `marketing_cost`   | Advertising cost          | 750            |
+| `landing_page`     | Page visited first        | Services       |
+| `conversion_type`  | Type of action            | Contact Form   |
+:::
+
+# Measures
+
+## Key Performance Indicators
+
+::::: columns
+::: {.column width="50%"}
+### Visibility
+
+- Search impressions
+- Search ranking
+- Website sessions
+- Organic traffic
+- Brand searches
+
+### Engagement
+
+- Engaged sessions
+- Time on page
+- Pages per session
+- Service-page visits
+- Resource downloads
+:::
+
+::: {.column width="50%"}
+### Conversion
+
+- Contact-form submissions
+- Phone calls
+- Appointment requests
+- Referral inquiries
+- Conversion rate
+
+### Efficiency
+
+- Cost per conversion
+- Cost per qualified inquiry
+- Return on advertising spend
+- Conversion rate by channel
+:::
+:::::
+
+# Reproducible Demonstration Data
+
+The following code creates a simulated dataset for demonstration purposes.
+
+The data should eventually be replaced with validated Wellness Ranch Therapy data.
+
+```{r}
+#| label: demo-data
+#| echo: true
+
+channel_data <- tibble(
+  channel = c(
+    "Organic Search",
+    "Google Ads",
+    "Social Media",
+    "Email",
+    "Referral Traffic"
+  ),
+  sessions = c(620, 410, 355, 180, 145),
+  conversions = c(32, 27, 12, 14, 18),
+  marketing_cost = c(300, 950, 240, 120, 80)
+) |>
+  mutate(
+    conversion_rate = conversions / sessions,
+    cost_per_conversion = marketing_cost / conversions
+  )
+
+channel_data
+```
+
+# Demonstration Chart {#demonstration-chart}
+
+## Conversions by Digital Channel
+
+```{r}
+#| label: fig-channel-conversions
+#| fig-cap: "Demonstration number of conversions by digital marketing channel."
+#| echo: false
+#| warning: false
+
+channel_data |>
+  ggplot(aes(
+    x = reorder(channel, conversions),
+    y = conversions,
+    fill = channel
+  )) +
+  geom_col(show.legend = FALSE) +
+  coord_flip() +
+  labs(
+    title = "Demonstration Conversions by Channel",
+    subtitle = "Illustrative data for presentation purposes only",
+    x = NULL,
+    y = "Number of conversions"
+  )
+```
+
+# Demonstration Findings
+
+Based on the demonstration data:
+
+::: incremental
+- Organic Search generated the largest number of conversions.
+- Referral Traffic produced a relatively high number of conversions compared with its traffic volume.
+- Google Ads generated conversions but had the highest marketing cost.
+- Social-media engagement should be evaluated based on meaningful actions.
+- Additional information is needed to determine the quality of each conversion.
+:::
+
+::: fragment
+The demonstration shows why channel performance should be evaluated using both volume and efficiency.
+:::
+
+# Example Summary Table
+
+```{r}
+#| label: tbl-channel-summary
+#| tbl-cap: "Demonstration summary of digital channel performance."
+#| echo: false
+
+channel_data |>
+  mutate(
+    conversion_rate = paste0(round(conversion_rate * 100, 1), "%"),
+    marketing_cost = scales::dollar(marketing_cost),
+    cost_per_conversion = scales::dollar(cost_per_conversion)
+  ) |>
+  rename(
+    Channel = channel,
+    Sessions = sessions,
+    Conversions = conversions,
+    `Marketing Cost` = marketing_cost,
+    `Conversion Rate` = conversion_rate,
+    `Cost per Conversion` = cost_per_conversion
+  ) |>
+  kable(align = "lrrrrr")
+```
+
+# Proposed Analytics Methods
+
+## Descriptive Analysis
+
+The first stage will summarize:
+
+- Website traffic by channel
+- Search impressions and clicks
+- Page-level engagement
+- Landing-page performance
+- Advertising spend
+- Conversion activity
+- Inquiry volume over time
+
+## Comparative Analysis
+
+The project may compare:
+
+- Organic versus paid traffic
+- New versus returning visitors
+- Service pages versus informational pages
+- Campaign periods versus non-campaign periods
+- Different landing pages
+- Different search terms
+- Different audience segments
+
+# Proposed Analytics Methods
+
+## Predictive or Explanatory Analysis
+
+Depending on the available data, possible methods include:
+
+::: incremental
+- Conversion-rate analysis
+- Search-keyword analysis
+- Website funnel analysis
+- Customer or audience segmentation
+- Regression analysis
+- A/B testing
+- Time-series comparison
+- Cost-per-conversion analysis
+- Campaign attribution analysis
+:::
+
+The final method will depend on the quality, size, and structure of the available data.
+
+# Website and SEO Opportunities
+
+Potential improvement areas include:
+
+::::: columns
+::: {.column width="50%"}
+### Website
+
+- Clear service descriptions
+- Strong calls to action
+- Easier navigation
+- Mobile-friendly design
+- Accessible contact information
+- Trust-building content
+:::
+
+::: {.column width="50%"}
+### SEO
+
+- Relevant search terms
+- Improved page titles
+- Descriptive headings
+- Local search optimization
+- Updated metadata
+- Helpful educational content
+:::
+:::::
+
+# Digital Advertising Opportunities
+
+Search advertising can be evaluated using:
+
+::: incremental
+- Keyword relevance
+- Click-through rate
+- Landing-page quality
+- Conversion rate
+- Cost per click
+- Cost per conversion
+- Qualified inquiry rate
+- Search intent
+:::
+
+::: callout-note
+Advertising performance should be measured by meaningful outcomes rather than clicks alone.
+:::
+
+# Implementation Plan {#implementation-plan}
+
+## Recommended Phases
+
+``` text
+Phase 1: Assessment
+   ↓
+Phase 2: Tracking and Measurement
+   ↓
+Phase 3: Website and SEO Improvements
+   ↓
+Phase 4: Search Advertising Optimization
+   ↓
+Phase 5: Performance Evaluation
+   ↓
+Phase 6: Continuous Improvement
+```
+
+# Proposed Deliverables
+
+Potential deliverables include:
+
+::: incremental
+1.  Digital-marketing audit
+2.  Website and SEO assessment
+3.  Analytics and conversion-tracking plan
+4.  Keyword and search-intent analysis
+5.  Website-content recommendations
+6.  Search-advertising recommendations
+7.  Conversion funnel analysis
+8.  Digital-marketing performance dashboard
+9.  Campaign-measurement template
+10. Implementation and evaluation plan
+:::
+
+# Storytelling Framework
+
+``` text
+What are potential clients searching for?
+        ↓
+How are they finding Wellness Ranch Therapy?
+        ↓
+What do they do on the website?
+        ↓
+Where does the digital journey break down?
+        ↓
+Which improvements should be implemented first?
+        ↓
+How will success be measured?
+```
+
+::: fragment
+The final recommendations should be practical, measurable, and aligned with Wellness Ranch Therapy's mission and available resources.
+:::
+
+# Limitations
+
+Important limitations may include:
+
+::: incremental
+- Small or incomplete datasets
+- Missing historical analytics
+- Inconsistent conversion tracking
+- Limited advertising data
+- Privacy restrictions
+- Difficulty measuring offline inquiries
+- Small sample sizes
+- Limited ability to establish causality
+- Changes in search-engine algorithms
+- External changes in audience behavior
+:::
+
+# Next Steps
+
+::: incremental
+1.  Confirm Wellness Ranch Therapy's primary business goals.
+2.  Identify the most important audience segments.
+3.  Inventory all current digital platforms and data sources.
+4.  Define meaningful conversion events.
+5.  Review website content and technical structure.
+6.  Establish baseline performance measures.
+7.  Implement priority website and SEO improvements.
+8.  Test and evaluate search advertising improvements.
+9.  Review results with stakeholders.
+10. Develop a sustainable measurement process.
+:::
+
+# Conclusion
+
+The central project question is:
+
+> Which website, SEO, analytics, and search advertising improvements will most effectively increase visibility, engagement, and meaningful conversions for Wellness Ranch Therapy?
+
+::::: columns
+::: {.column width="50%"}
+### Current Challenge
+
+- Limited digital measurement
+- Unclear conversion paths
+- Possible gaps in website content
+- Difficulty connecting channels to outcomes
+:::
+
+::: {.column width="50%"}
+### Desired Outcome
+
+- Greater online visibility
+- Better website experience
+- More meaningful inquiries
+- Improved campaign measurement
+- Sustainable digital growth
+:::
+:::::
+
+# References {#references}
+
+1.  Lemon, K. N., & Verhoef, P. C. (2016). Understanding customer experience throughout the customer journey. *Journal of Marketing, 80*(6), 69–96. [Link](https://doi.org/10.1509/jm.15.0420)
+
+2.  Google. (2026). *Google Analytics documentation*. [Link](https://support.google.com/analytics/)
+
+3.  Google. (2026). *Search Console documentation*. [Link](https://support.google.com/webmasters/)
+
+4.  Google. (2026). *SEO Starter Guide*. [Link](https://developers.google.com/search/docs/fundamentals/seo-starter-guide)
+
+5.  Quarto. (2026). *Presentations with Quarto Revealjs*. [Link](https://quarto.org/docs/presentations/revealjs/)
+
+# Appendix
+
+## Appendix Navigation
+
+- [Return to the introduction](#introduction)
+- [View the analytics objective](#analytics-objective)
+- [View the data and sampling plan](#data-and-sampling)
+- [View the demonstration chart](#demonstration-chart)
+- [View the implementation plan](#implementation-plan)
+- [View the references](#references)
+
+# Appendix: Example R Code
+
+```{r}
+#| label: appendix-code
+#| echo: true
+
+channel_data |>
+  arrange(desc(conversions)) |>
+  select(
+    channel,
+    sessions,
+    conversions,
+    marketing_cost,
+    conversion_rate,
+    cost_per_conversion
+)
+```
+
+
+# Appendix
+
+- [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
+- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/cep-short-title.html)
