@@ -1,0 +1,566 @@
+---
+title: "M06-Reflection Essay-Advanced Data Wrangling"
+author: "Brian Vuong"
+date: today
+format:
+  html:
+    toc: true
+    toc-depth: 4
+    toc-expand: true
+    number-sections: true
+    code-link: true
+    code-fold: true
+    code-tools: true
+    code-overflow: wrap
+    embed-resources: true
+    theme: cosmo
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+  message: false
+---
+
+```{r}
+#| label: setup
+#| include: false
+
+library(tidyverse)
+library(knitr)
+
+theme_set(
+  theme_minimal(base_size = 14) +
+    theme(
+      plot.title = element_text(face = "bold"),
+      legend.position = "bottom"
+    )
+)
+```
+
+# Introduction
+
+This reflection summarizes what I learned from the module on Quarto Revealjs presentations and advanced data wrangling in R.
+
+For the presentation activity, I created a Revealjs slide deck based on my Capstone Experience Project, **Wellness Ranch Therapy**. The presentation focused on improving website visibility, search-engine optimization, digital advertising, analytics tracking, and meaningful conversions.
+
+The reflection connects the presentation experience to advanced data-wrangling concepts, including relational joins, reshaping data, and grouped summaries.
+
+::: callout-note
+## Main Takeaway
+
+This module helped me understand that data analysis involves both technical and communication skills. Advanced data-wrangling functions help prepare the data, while Quarto helps explain the findings to an audience.
+:::
+
+# Revealjs Presentations
+
+## Prompt
+
+> In Step 1, you learned how to design presentation slides with Quarto. What is your impression of the Revealjs presentation? Describe its capabilities as you learned from the presentations. What are its strengths and weaknesses compared with PowerPoint?
+
+## Response
+
+My impression of Revealjs is that it is a flexible and reproducible way to create professional presentations using Markdown, Quarto, R, and HTML. Instead of creating each slide manually in a graphical presentation program, I can write the slide content in a `.qmd` file and render it into an interactive HTML presentation.
+
+One of the most useful capabilities of Revealjs is that it allows text, code, tables, charts, citations, speaker notes, and links to be included in one source document. This is especially useful for data-analysis presentations because the charts and tables can be generated directly from the data.
+
+Revealjs also supports several visual and interactive features, including:
+
+::: {.incremental}
+
+- Ready-made presentation themes
+- Slide transitions
+- Incremental lists
+- Fragments
+- Speaker notes
+- Slide numbers
+- Table of contents
+- Columns
+- Scrollable content
+- Footnotes
+- Internal slide links
+- Reproducible R code
+- Embedded resources
+- Custom CSS styling
+
+:::
+
+Another strength is reproducibility. If the data changes, I can rerun the Quarto document and update the chart or table without manually editing the presentation. This reduces the possibility of copying an old number into a slide.
+
+Revealjs also works well for presentations that need to be shared online. The final product is an HTML file that can be published on a website or through a service such as Quarto Pub.
+
+## Strengths Compared with PowerPoint
+
+Revealjs has several strengths compared with PowerPoint:
+
+| Revealjs strength | Explanation |
+|:---|:---|
+| Reproducibility | Code can automatically generate tables and charts |
+| Transparency | The source file documents how the results were created |
+| Web publishing | Presentations can be viewed in a browser |
+| Version control | A text-based file is easier to compare and update |
+| Flexible formatting | HTML and CSS allow detailed customization |
+| Integration with R | Data analysis and presentation can exist together |
+
+: Strengths of Revealjs compared with PowerPoint. {#tbl-reveal-strengths}
+
+## Weaknesses Compared with PowerPoint
+
+Revealjs also has limitations. PowerPoint can be easier for users who prefer dragging, resizing, and formatting objects visually. PowerPoint also provides familiar tools for animations, shapes, diagrams, and direct editing.
+
+Revealjs requires more familiarity with Markdown, Quarto syntax, HTML, CSS, and sometimes R. A small syntax mistake can prevent the presentation from rendering correctly. It can also take additional time to learn how to control slide layouts and visual spacing.
+
+| Revealjs limitation | Explanation |
+|:---|:---|
+| Learning curve | Requires knowledge of Markdown and Quarto |
+| Layout control | Some visual adjustments require CSS |
+| Rendering errors | Syntax or code errors can affect the final output |
+| Collaboration | Some users may prefer graphical editing |
+| Offline editing | PowerPoint may be more convenient for quick manual changes |
+
+: Limitations of Revealjs compared with PowerPoint. {#tbl-reveal-limitations}
+
+Overall, I do not see Revealjs as a complete replacement for PowerPoint in every situation. Instead, I see Revealjs as especially valuable for technical, analytical, and reproducible presentations. PowerPoint may be more convenient for presentations that depend heavily on manual design, animation, or graphical editing.
+
+# My Revealjs Presentation
+
+## Prompt
+
+> In Step 2, you were asked to create a Revealjs presentation. Provide a link to the presentation published on the web. Add at least one reproducible chart or table, briefly describe what the presentation is about, and explain what you learned from the experience.
+
+## Published Presentation
+
+My Revealjs presentation is available at the following link:
+
+[Link to revealjs Slide](https://brianvuong1.github.io/ibm-6500/cep-short-title.html)
+
+The presentation was created using Quarto and Revealjs. It was designed as an early proposal presentation for my Capstone Experience Project.
+
+::: callout-warning
+Replace the placeholder link above with the actual URL after publishing the presentation.
+:::
+
+## Presentation Topic
+
+My presentation is about **implementing and optimizing digital marketing for Wellness Ranch Therapy**.
+
+The central project question is:
+
+> Which website, SEO, analytics, and search-advertising improvements will most effectively increase visibility, engagement, and meaningful conversions for Wellness Ranch Therapy?
+
+The presentation discusses the relationship between digital marketing activity and meaningful outcomes. It focuses on how Wellness Ranch Therapy may use website improvements, search-engine optimization, analytics, social media, and paid search advertising to reach relevant audiences.
+
+The presentation includes the following sections:
+
+::: {.incremental}
+
+1. The digital-marketing business problem
+2. The analytics objective
+3. The potential client journey
+4. Website and SEO opportunities
+5. Digital advertising opportunities
+6. Proposed data sources
+7. Key performance indicators
+8. Proposed analytics methods
+9. Implementation phases
+10. Limitations and next steps
+
+:::
+
+## Reproducible Chart
+
+The presentation included a reproducible chart comparing the number of conversions across several digital channels.
+
+The demonstration dataset included:
+
+- Organic Search
+- Google Ads
+- Social Media
+- Email
+- Referral Traffic
+
+The chart was generated from R code rather than manually created in a presentation program. The following example represents the type of code used in the presentation:
+
+```{r}
+#| label: fig-reflection-demo
+#| fig-cap: "Demonstration conversions by digital marketing channel."
+#| echo: false
+
+channel_data <- tibble(
+  channel = c(
+    "Organic Search",
+    "Google Ads",
+    "Social Media",
+    "Email",
+    "Referral Traffic"
+  ),
+  sessions = c(620, 410, 355, 180, 145),
+  conversions = c(32, 27, 12, 14, 18)
+)
+
+channel_data |>
+  ggplot(aes(
+    x = reorder(channel, conversions),
+    y = conversions,
+    fill = channel
+  )) +
+  geom_col(show.legend = FALSE) +
+  coord_flip() +
+  labs(
+    title = "Demonstration Conversions by Channel",
+    subtitle = "Illustrative data for Wellness Ranch Therapy",
+    x = NULL,
+    y = "Number of conversions"
+  )
+```
+
+As shown in @fig-reflection-demo, organic search generated the highest number of demonstration conversions. Referral traffic also produced a relatively strong result compared with its smaller number of sessions.
+
+The data in the presentation was simulated because the actual client data was not available. However, the workflow demonstrates how actual Wellness Ranch Therapy data could be used later.
+
+## What I Learned from Creating the Presentation
+
+Creating the Revealjs presentation helped me understand the importance of storytelling in data analysis. I could not simply list digital-marketing concepts. I needed to organize the presentation around a business problem and a sequence of questions.
+
+The presentation process helped me learn how to:
+
+::: {.incremental}
+
+- Convert a broad project topic into a central analytics question
+- Organize information into a logical slide sequence
+- Connect digital-marketing activities to measurable outcomes
+- Use code to create reproducible charts
+- Include speaker notes for additional explanations
+- Use columns and incremental lists to improve slide design
+- Add internal links to an appendix
+- Publish a presentation as a web-based HTML document
+
+:::
+
+One challenge was deciding how much information to include on each slide. A technical report can contain more detail, but presentation slides should be concise enough for an audience to follow. I learned that slides should communicate the main idea while speaker notes or an appendix can provide additional detail.
+
+I also learned that digital-marketing metrics need to be interpreted carefully. A website may receive many visitors, but traffic alone does not prove that the marketing strategy is successful. Meaningful outcomes may include contact-form submissions, phone calls, appointment requests, qualified inquiries, or other actions connected to the organization's goals.
+
+# Advanced Data Wrangling
+
+## Prompt
+
+> In Step 3, the advanced wrangling lecture introduced new concepts, including how to join relational databases. Pick three different functions, each from a different category. Describe when to use them and give one coding example along with an output for each function.
+
+## Response
+
+Advanced data wrangling allows an analyst to transform multiple datasets into a structure that can be analyzed and communicated. The three functions selected for this reflection are:
+
+1. `left_join()` from the relational-data category
+2. `pivot_longer()` from the data-reshaping category
+3. `summarise()` from the grouped-summary category
+
+These functions are useful for the Wellness Ranch Therapy project because digital-marketing information may be stored across multiple sources. Website traffic, advertising costs, campaign details, and conversion records may need to be combined before calculating performance measures.
+
+# Function 1: `left_join()`
+
+## Category: Relational Data Joins
+
+### When to Use It
+
+The `left_join()` function is used to combine two datasets using one or more matching keys. It keeps every row from the first dataset and adds matching information from the second dataset.
+
+This would be useful for Wellness Ranch Therapy if one dataset contained campaign performance and another dataset contained campaign costs or campaign descriptions.
+
+For example, the first dataset may contain channel-level performance information, while the second dataset contains marketing costs.
+
+```{r}
+#| label: left-join-example
+#| echo: true
+
+channel_performance <- tibble(
+  channel = c(
+    "Organic Search",
+    "Google Ads",
+    "Social Media",
+    "Email"
+  ),
+  conversions = c(32, 27, 12, 14)
+)
+
+channel_costs <- tibble(
+  channel = c(
+    "Organic Search",
+    "Google Ads",
+    "Social Media",
+    "Email"
+  ),
+  marketing_cost = c(300, 950, 240, 120)
+)
+
+joined_channels <- channel_performance |>
+  left_join(channel_costs, by = "channel")
+
+joined_channels |>
+  kable(
+    caption = "Output from joining channel performance and marketing costs."
+  )
+```
+
+The output combines the number of conversions with the marketing cost for each channel. The resulting dataset can be used to calculate cost per conversion.
+
+```{r}
+#| label: left-join-calculation
+#| echo: true
+
+joined_channels |>
+  mutate(
+    cost_per_conversion = marketing_cost / conversions
+  ) |>
+  kable(
+    caption = "Cost per conversion after using left_join()."
+  )
+```
+
+The advantage of `left_join()` is that it preserves the main dataset while adding information from another related table. It is important to check that the joining variable is spelled consistently and that the key does not create unintended duplicate rows.
+
+# Function 2: `pivot_longer()`
+
+## Category: Data Reshaping
+
+### When to Use It
+
+The `pivot_longer()` function is used to convert data from a wide format into a long format.
+
+Wide data often has multiple measurement columns. Long data places the measurement names in one column and the corresponding values in another column. Long data is especially useful for creating charts with `ggplot2`.
+
+For example, the following dataset stores sessions and conversions in separate columns.
+
+```{r}
+#| label: pivot-longer-example
+#| echo: true
+
+wide_channel_data <- tibble(
+  channel = c(
+    "Organic Search",
+    "Google Ads",
+    "Social Media"
+  ),
+  sessions = c(620, 410, 355),
+  conversions = c(32, 27, 12)
+)
+
+wide_channel_data |>
+  kable(
+    caption = "Wide-format digital-marketing data."
+  )
+```
+
+The `pivot_longer()` function reshapes the two measurement columns into a single `measure` column and a single `value` column.
+
+```{r}
+#| label: pivot-longer-output
+#| echo: true
+
+long_channel_data <- wide_channel_data |>
+  pivot_longer(
+    cols = c(sessions, conversions),
+    names_to = "measure",
+    values_to = "value"
+  )
+
+long_channel_data |>
+  kable(
+    caption = "Long-format data created with pivot_longer()."
+  )
+```
+
+The long format makes it easier to compare multiple measures in one visualization.
+
+```{r}
+#| label: pivot-longer-chart
+#| fig-cap: "Sessions and conversions after reshaping the data into long format."
+#| echo: false
+
+long_channel_data |>
+  ggplot(aes(
+    x = channel,
+    y = value,
+    fill = measure
+  )) +
+  geom_col(position = "dodge") +
+  labs(
+    title = "Digital Channel Performance",
+    x = NULL,
+    y = "Count",
+    fill = "Measure"
+  ) +
+  theme(axis.text.x = element_text(angle = 30, hjust = 1))
+```
+
+As shown in @fig-pivot-longer-chart, reshaping the data makes it possible to display sessions and conversions using a common chart structure.
+
+# Function 3: `summarise()`
+
+## Category: Grouped Summaries
+
+### When to Use It
+
+The `summarise()` function is used to calculate summary statistics such as totals, averages, counts, minimums, and maximums.
+
+It is often used together with `group_by()`. The `group_by()` function identifies the groups, and `summarise()` calculates a result for each group.
+
+For Wellness Ranch Therapy, this could be used to calculate total sessions, total conversions, and average conversion rates by channel.
+
+```{r}
+#| label: summarise-example
+#| echo: true
+
+marketing_data <- tibble(
+  channel = c(
+    "Organic Search",
+    "Organic Search",
+    "Google Ads",
+    "Google Ads",
+    "Social Media",
+    "Social Media"
+  ),
+  sessions = c(300, 320, 190, 220, 180, 175),
+  conversions = c(15, 17, 12, 15, 6, 6)
+)
+
+channel_summary <- marketing_data |>
+  group_by(channel) |>
+  summarise(
+    total_sessions = sum(sessions),
+    total_conversions = sum(conversions),
+    conversion_rate = total_conversions / total_sessions,
+    .groups = "drop"
+  )
+
+channel_summary |>
+  kable(
+    digits = 3,
+    caption = "Grouped channel summary created with summarise()."
+  )
+```
+
+The output provides one row for each marketing channel. This is more useful for decision-making than reviewing every individual daily record.
+
+The conversion rate can be formatted as a percentage for communication:
+
+```{r}
+#| label: summarise-formatted-output
+#| echo: true
+
+channel_summary |>
+  mutate(
+    conversion_rate = scales::percent(conversion_rate, accuracy = 0.1)
+  ) |>
+  kable(
+    caption = "Formatted grouped summary of marketing performance."
+  )
+```
+
+The `summarise()` function is useful because it converts detailed records into a concise performance summary. This type of summary could help Wellness Ranch Therapy identify which channels deserve additional review.
+
+# Comparing the Three Functions
+
+The three functions serve different purposes:
+
+| Function | Category | Main purpose | Example use |
+|:---|:---|:---|:---|
+| `left_join()` | Relational joins | Combine related datasets | Add advertising cost to channel results |
+| `pivot_longer()` | Data reshaping | Convert wide data to long data | Prepare multiple metrics for visualization |
+| `summarise()` | Grouped summaries | Calculate group-level results | Calculate conversions by channel |
+
+: Three advanced data-wrangling functions. {#tbl-wrangling-functions}
+
+These functions can also be used together. For example, I could join campaign-cost data to website-performance data, reshape the resulting dataset, and then calculate grouped summaries by channel or campaign.
+
+# Combining the Workflow
+
+The general workflow for the Wellness Ranch Therapy project could look like this:
+
+```text
+Import website and campaign data
+        ↓
+Use left_join() to combine related tables
+        ↓
+Use pivot_longer() to reshape performance measures
+        ↓
+Use group_by() and summarise() to create summaries
+        ↓
+Create charts and tables in Quarto
+        ↓
+Explain findings in a report or presentation
+```
+
+This workflow shows how data wrangling and communication are connected. The code prepares the information, while Quarto presents the process and results to the audience.
+
+# Reflection and Conclusion
+
+This module helped me connect advanced data-wrangling techniques with my Wellness Ranch Therapy Capstone Project.
+
+Creating the Revealjs presentation taught me how to communicate an analytics project visually and interactively. I learned that a presentation should have a clear story, not just a collection of charts and bullet points.
+
+The advanced data-wrangling material showed me how several datasets can be combined and transformed before analysis. The functions `left_join()`, `pivot_longer()`, and `summarise()` each solve a different problem:
+
+::: {.incremental}
+
+- `left_join()` combines related information.
+- `pivot_longer()` changes the structure of a dataset.
+- `summarise()` creates useful group-level measurements.
+
+:::
+
+The most important lesson is that good analytics requires both accurate data preparation and clear communication. For Wellness Ranch Therapy, this means creating a workflow that can connect digital activity to meaningful outcomes such as qualified inquiries, appointment requests, and continued engagement.
+
+A reproducible Quarto workflow can make that process easier to understand, update, and share.
+
+# References
+
+1. Google. (2026). *Google Analytics documentation*. [Link](https://support.google.com/analytics/)
+
+2. Google. (2026). *Search Console documentation*. [Link](https://support.google.com/webmasters/)
+
+3. Quarto. (2026). *Presentations with Quarto Revealjs*. [Link](https://quarto.org/docs/presentations/revealjs/)
+
+4. R Core Team. (2026). *R: A language and environment for statistical computing*. [Link](https://www.r-project.org/)
+
+5. Wickham, H., et al. (2019). *Welcome to the Tidyverse*. [Link](https://www.tidyverse.org/)
+
+6. Wickham, H., Averick, M., Bryan, J., et al. (2019). Welcome to the Tidyverse. *Journal of Open Source Software, 4*(43), 1686. [Link](https://doi.org/10.21105/joss.01686)
+
+# Appendix
+
+## Appendix Navigation
+
+- [Return to the introduction](#introduction)
+- [View the Revealjs reflection](#revealjs-presentations)
+- [View the presentation reflection](#my-revealjs-presentation)
+- [View the advanced wrangling section](#advanced-data-wrangling)
+- [View the function comparison](#comparing-the-three-functions)
+- [View the conclusion](#reflection-and-conclusion)
+- [View the references](#references)
+
+## Appendix: Presentation Checklist
+
+::: {.incremental}
+
+- Revealjs presentation created with Quarto
+- Wellness Ranch Therapy topic included
+- Reproducible chart included
+- Speaker notes included
+- Incremental lists included
+- Columns included
+- Internal appendix links included
+- Demonstration data labeled as simulated
+- Presentation link added
+- Advanced wrangling examples included
+- Outputs displayed for all three functions
+
+:::
+
+[Back to the beginning](#introduction)
+
+
+
+
+- [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
+- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/Sem-01-Take-Notes.html)
+- [Link to revealjs Slide](https://brianvuong1.github.io/ibm-6500/cep-short-title.html)
