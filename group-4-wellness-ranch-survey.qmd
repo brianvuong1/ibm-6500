@@ -1,0 +1,37 @@
+---
+title: "Group 4 - Wellness Ranch Survey"
+author: "Brian Vuong"
+date: 'today'
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    code-link: true
+    code-tools: true
+    code-fold: true
+    code-overflow: wrap
+    code-copy: true
+    embed-resources: true
+    theme: cosmo
+    html-math-method: katex
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+---
+
+![qualtrics collab](survey_collab.png)
+
+
+
+
+# Appendix
+
+- [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
+- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/group-4-wellness-ranch-survey.html)
+- [Qualtrics Survey](https://cpp.pdx1.qualtrics.com/survey-builder/SV_emqFZ0Yr9Z2fgrk/edit)
+- [Construct table](https://docs.google.com/document/d/1Y27DsO9x2OFT71ipNMHRLTjvJTlpeoeT/edit?usp=share_link&ouid=102053154635546890348&rtpof=true&sd=true)
