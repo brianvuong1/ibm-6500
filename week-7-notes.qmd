@@ -1,0 +1,85 @@
+---
+title: "Week 7 Notes IBM 6500 Dr Jung"
+author: "Brian Vuong"
+date: 'today'
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    code-link: true
+    code-tools: true
+    code-fold: true
+    code-overflow: wrap
+    code-copy: true
+    embed-resources: true
+    theme: cosmo
+    html-math-method: katex
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+---
+
+## W07 – Data Science Hangout Series
+
+- Building a Data Team with Open Source from the Ground Up \| Rylan Murry
+
+------------------------------------------------------------------------
+
+## W07-1 – M08-3: Questionnaire Design (3): Qualtrics Questionnaire Finalization
+
+### Overview
+
+- Overview of the Journey from Hypotheses to Questionnaire with Case31
+- **IC8-3-1: GP Presentation: C&M Table + Questionnaire**
+  - **Due:** 10/8
+- **BRP vs. m-Turk**
+- **CEP 06 – Final Revised Qualtrics Version of Questionnaire**
+  - **Due:** 10/14
+
+------------------------------------------------------------------------
+
+## W07-2 – M09: Sampling Design, Procedure, and Size Determination
+
+### Overview
+
+- In-depth Overview
+
+### Sampling Design and Procedure (Ch12)
+
+- **Quiz for Ch12**
+  - **Status:** Assigned
+  - **Due:** 10/8
+
+### Sampling – Sample Size Determination (Ch13)
+
+- **Quiz for Ch13**
+  - **Status:** Assigned
+  - **Due:** 10/8
+
+### Qualtrics M04 – Distributing Your Survey
+
+- **Status:** Assigned
+- **Platform:** Qualtrics University
+- **Step 4:** Distributing Your Survey
+
+### Components of Methods Chapter
+
+1.  Qualitative Research
+2.  Main Study Research Design
+3.  Sampling Method
+4.  Sample Characteristics
+5.  Measurement
+6.  Procedure
+
+------------------------------------------------------------------------
+
+## W07-3 – M02: GA4 & GTM Basics
+
+### GA4 Refresh + GTM Instrumentation + Validation
+
+- GA4/GTM Validation Resources

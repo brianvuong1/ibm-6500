@@ -1,6 +1,6 @@
 ---
 title: "Group 4 - Wellness Ranch Survey"
-author: "Brian Vuong"
+author: "Brian Vuong, Kevin Bachez, Ron Sabilla, Alexa Bueno"
 date: 'today'
 format:
   html:
@@ -25,9 +25,6 @@ execute:
 ---
 
 ![qualtrics collab](survey_collab.png)
-
-
-
 
 # Appendix
 
