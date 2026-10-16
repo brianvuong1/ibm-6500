@@ -1,0 +1,65 @@
+---
+title: "Week 8 Notes IBM 6500 Dr Jung"
+author: "Brian Vuong"
+date: 'today'
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    code-link: true
+    code-tools: true
+    code-fold: true
+    code-overflow: wrap
+    code-copy: true
+    embed-resources: true
+    theme: cosmo
+    html-math-method: katex
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+---
+
+## Overview of Week 8
+
+- going over how to publish on Github Pages
+
+- talk about DataCamp SQL courses
+
+- went over Netlify
+
+## Survey Design and Data Collection
+
+- Went over Conceptual Model version 7
+
+  - Idealistic vs realistic advertising
+
+  - Realistic use real people with natural features
+
+  - influence demographics behavior
+
+  - article about mediator and moderator
+
+- Questionaire structure
+
+- group questions by sections
+
+- consider journey of survey taker
+
+- should be engaging
+
+- Went over example Billie ad
+
+- Formative and reflective measurement models
+
+## IRB Application
+
+- went over application process
+
+## Initial Presentation
+
+## Week 8 Topics
