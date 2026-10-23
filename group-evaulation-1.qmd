@@ -1,0 +1,74 @@
+---
+title: "Peer Evaluation Week 9"
+author: "Brian Vuong"
+date: 'today'
+format:
+  html:
+    toc: true
+    toc-depth: 3
+    toc-expand: 2
+    toc-location: right
+    number-sections: true
+    number-depth: 3
+    code-link: true
+    code-tools: true
+    code-fold: true
+    code-overflow: wrap
+    code-copy: true
+    embed-resources: true
+    theme: cosmo
+    html-math-method: katex
+editor: visual
+execute:
+  freeze: auto
+  warning: false
+---
+
+
+
+# Group Member Evaluation Form
+
+**Name:** Brian
+
+**Date:** Oct 22
+
+**Group Name/Project Name:** Team 4
+
+## Group Member Evaluation
+
+| Member Name | Grade (%) | MVP (Yes/No) |
+|---|---|---|
+| 1. Brian (Self) | 100% | No |
+| 2. Alexa | 100% | No |
+| 3. Kevin | 100% | No |
+| 4. Ron | 100% | No |
+
+## Comments on Teammate Contributions
+
+**Alexa – AO2 (100%)**
+
+Alexa was responsible for AO2 and completed her assigned portion of the group project. She contributed her work to the overall project and fulfilled her responsibilities as a team member.
+
+**Kevin – AO1 (100%)**
+
+Kevin was responsible for AO1 and completed his assigned portion of the project. His contribution supported the group's overall progress and helped ensure that his section was included in the final submission.
+
+**Ron – AO4 (100%)**
+
+Ron was responsible for AO4 and completed his assigned portion of the group project. He contributed to the team's overall work and fulfilled his assigned responsibilities.
+
+**Brian – AO3 (100%)**
+
+I was responsible for AO3 and completed my assigned portion of the group project. I contributed my work to the final submission and fulfilled my responsibilities as a team member.
+
+## Overall Evaluation
+
+All four group members contributed equally by completing their assigned sections of the project. Kevin worked on AO1, Alexa worked on AO2, Brian worked on AO3, and Ron worked on AO4. Each member fulfilled their responsibilities and contributed to the completion of the group project. Therefore, I believe everyone deserves a grade of 100%.
+
+**MVP:** None selected, as all members contributed equally.
+
+
+# Appendix
+
+- [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
+- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/group-evaulation-1.html)
