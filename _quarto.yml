@@ -1,6 +1,11 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - index.qmd
+    - dashboard.qmd
+    - css-scss.qmd
+    - listings.qmd
 website:
   title: "Brian Vuong | Digital Marketing Portfolio"
   description: "A portfolio of digital marketing, analytics, design, and Quarto work."
