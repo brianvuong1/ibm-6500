@@ -1,0 +1,41 @@
+project:
+  type: website
+  output-dir: _site
+  render:
+    - index.qmd
+    - dashboard.qmd
+    - css-scss.qmd
+    - listings.qmd
+website:
+  title: "Brian Vuong | Digital Marketing Portfolio"
+  description: "A portfolio of digital marketing, analytics, design, and Quarto work."
+  site-url: "https://brianvuong1.github.io/ibm-6500/"
+  navbar:
+    background: "#102a43"
+    foreground: "#ffffff"
+    left:
+      - href: index.qmd
+        text: Home
+      - href: dashboard.qmd
+        text: CEP Dashboard
+      - href: css-scss.qmd
+        text: CSS / SCSS
+      - href: listings.qmd
+        text: Listings
+    right:
+      - icon: github
+        href: https://github.com/
+        aria-label: GitHub
+  page-footer:
+    left: "© 2026 Brian Vuong"
+    right: "Built with Quarto"
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+    toc: true
+    toc-location: right
+    smooth-scroll: true
+    link-external-newwindow: true
+    code-fold: true
+    code-tools: true
