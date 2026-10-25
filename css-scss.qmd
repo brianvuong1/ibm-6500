@@ -1,0 +1,79 @@
+---
+title: "Extending Quarto with CSS and SCSS"
+subtitle: "A practical styling guide for portfolio websites"
+---
+
+Quarto gives a website a strong structure out of the box. CSS and SCSS make that structure feel intentional: they control typography, spacing, color, responsive layouts, and small interaction details without changing the content itself.
+
+## The styling workflow
+
+```text
+Quarto source → HTML structure → styles.css → browser presentation
+```
+
+The `_quarto.yml` file connects the site to `styles.css` with one line:
+
+```yaml
+format:
+  html:
+    css: styles.css
+```
+
+## Use design tokens
+
+The first section of the stylesheet defines reusable values. This keeps the site consistent and makes a redesign faster.
+
+```css
+:root {
+  --ink: #102a43;
+  --muted: #52606d;
+  --accent: #d97706;
+  --paper: #f7f9fc;
+  --radius: 18px;
+}
+```
+
+Instead of repeating a color in many selectors, use `var(--accent)`. The result is easier to read and maintain.
+
+## Build reusable components
+
+The homepage uses classes such as `.hero`, `.skill-card`, and `.btn`. These classes separate content from presentation and let the same visual language appear across multiple pages.
+
+```css
+.skill-card {
+  padding: 1.35rem;
+  border: 1px solid #d9e2ec;
+  border-radius: var(--radius);
+  background: white;
+}
+```
+
+## Make the layout responsive
+
+CSS Grid handles the desktop layout, while a media query stacks the content on smaller screens:
+
+```css
+@media (max-width: 720px) {
+  .hero,
+  .grid-3,
+  .metrics {
+    grid-template-columns: 1fr;
+  }
+}
+```
+
+This approach keeps the page readable on phones without duplicating the content.
+
+## Accessibility considerations
+
+Good styling should support access, not just appearance. Use sufficient color contrast, visible focus states, meaningful heading order, descriptive link text, and readable line lengths. Quarto handles much of the semantic structure; CSS should enhance it rather than hide it.
+
+## Why SCSS can help
+
+SCSS adds nesting, variables, mixins, and partial files to CSS. For a small portfolio, plain CSS is enough. For a larger site, SCSS can organize theme tokens, components, and responsive rules into separate files before compiling them into one stylesheet.
+
+::: {.callout-tip}
+### Takeaway
+
+Use Quarto for content and navigation, and use CSS or SCSS for the visual system. Keeping those responsibilities separate makes the website easier to revise and publish.
+:::

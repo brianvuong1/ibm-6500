@@ -1,0 +1,68 @@
+---
+title: "MSDM Culminating Experience Dashboard"
+subtitle: "Wellness Ranch Equine Assisted Therapy"
+page-layout: full
+---
+
+The capstone project applies digital marketing research to a real nonprofit organization. The project moves from identifying opportunities to implementing, measuring, and evaluating improvements across search visibility, website performance, analytics, and paid-search readiness.
+
+::: {.metrics}
+::: {.metric}
+<span class="metric-number">05</span>
+<span class="metric-label">Project objectives</span>
+:::
+::: {.metric}
+<span class="metric-number">03</span>
+<span class="metric-label">Measurement priorities</span>
+:::
+::: {.metric}
+<span class="metric-number">01</span>
+<span class="metric-label">Sustainable roadmap</span>
+:::
+:::
+
+## Project focus
+
+::: {.grid-3}
+::: {.skill-card}
+### Visibility
+Prioritize technical SEO, content, local search, and calls to action so people can find and understand Wellness Ranch.
+:::
+::: {.skill-card}
+### Measurement
+Define and validate GA4 events, key events, and KPIs for engagement, inquiries, phone interactions, and donations.
+:::
+::: {.skill-card}
+### Activation
+Prepare the organization for Google Ad Grants and a practical digital marketing strategy it can sustain after the project.
+:::
+:::
+
+## From the CEP report
+
+The full `cep-group-4.qmd` report identifies the core problem clearly: Wellness Ranch has a strong mission and growing community demand, but needs digital infrastructure to be found, measure its impact, and scale its reach.
+
+::: {.callout-note}
+### Explore the source work
+
+The dashboard is designed as a concise portal to the group report. Open the project source to review the complete objectives, analytics framework, research rationale, implementation plan, and references.
+
+[Open the CEP source file](https://github.com/brianvuong1/CEP-Group-4/blob/main/cep-group-4.qmd)
+:::
+
+## Measurement framework
+
+| Stage | Example KPI | Why it matters |
+|---|---|---|
+| Acquisition | Sessions by traffic source | Shows where visitors originate |
+| Engagement | Engagement rate and time | Shows interaction with content |
+| Service interest | Program interactions and phone clicks | Signals potential service interest |
+| Inquiries | Successful form submissions | Measures completed requests |
+| Donations | Confirmed completed donations | Connects digital activity to fundraising |
+
+## Next steps
+
+1. Audit the current GA4 configuration and test important user journeys.
+2. Create a measurement matrix linking objectives, events, validation methods, and reporting sources.
+3. Compare baseline and post-implementation results with limitations documented.
+4. Deliver a prioritized roadmap that Wellness Ranch can maintain.

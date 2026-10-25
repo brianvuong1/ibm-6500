@@ -1,0 +1,163 @@
+[
+  {
+    "objectID": "listings.html",
+    "href": "listings.html",
+    "title": "Listings in Quarto",
+    "section": "",
+    "text": "Listings are Quarto’s built-in way to collect and display pages from a project. They are useful when a portfolio has multiple case studies, reflections, dashboards, or course projects that should be discoverable from one index page."
+  },
+  {
+    "objectID": "listings.html#what-a-listing-does",
+    "href": "listings.html#what-a-listing-does",
+    "title": "Listings in Quarto",
+    "section": "What a listing does",
+    "text": "What a listing does\nA listing reads metadata from matching documents and renders a collection of cards or rows. Each item can show a title, description, date, image, and category. The listing page becomes a reusable portfolio index instead of a manually maintained set of links."
+  },
+  {
+    "objectID": "listings.html#a-minimal-listing-configuration",
+    "href": "listings.html#a-minimal-listing-configuration",
+    "title": "Listings in Quarto",
+    "section": "A minimal listing configuration",
+    "text": "A minimal listing configuration\nlisting:\n  contents: projects\n  type: grid\n  fields: [image, title, description, date]\n  sort: \"date desc\"\n  categories: true\n  filter-ui: true\nThe contents value points to a folder or pattern. type: grid creates a visual card layout, while categories and filter-ui help visitors narrow a larger collection."
+  },
+  {
+    "objectID": "listings.html#add-metadata-to-each-project",
+    "href": "listings.html#add-metadata-to-each-project",
+    "title": "Listings in Quarto",
+    "section": "Add metadata to each project",
+    "text": "Add metadata to each project\nEach portfolio page can include front matter like this:\n---\ntitle: \"Wellness Ranch SEO Audit\"\ndescription: \"A research-led review of search visibility and conversion opportunities.\"\ndate: 2026-10-01\ncategories: [SEO, Analytics, Capstone]\nimage: images/seo-audit.png\n---\nThe metadata becomes the content of the listing card. This is especially helpful for a portfolio because the summary can be written once and reused in navigation, search, and the project page."
+  },
+  {
+    "objectID": "listings.html#listing-ideas-for-this-portfolio",
+    "href": "listings.html#listing-ideas-for-this-portfolio",
+    "title": "Listings in Quarto",
+    "section": "Listing ideas for this portfolio",
+    "text": "Listing ideas for this portfolio\n\n\nCase studies\nShow the problem, approach, evidence, and outcome for client or class projects.\n\n\nReflections\nCollect course reflections and explain what each project taught you.\n\n\nDashboards\nOrganize interactive reports, visualizations, and measurement frameworks."
+  },
+  {
+    "objectID": "listings.html#why-listings-work-well-for-a-portfolio",
+    "href": "listings.html#why-listings-work-well-for-a-portfolio",
+    "title": "Listings in Quarto",
+    "section": "Why listings work well for a portfolio",
+    "text": "Why listings work well for a portfolio\nListings scale with the work. A new project only needs its own page and metadata; the index updates when the site is rendered. This keeps the homepage focused while giving visitors a structured way to browse deeper work.\n\n\n\n\n\n\nNotePractical tip\n\n\n\nUse consistent metadata across every project. A clear title, one-sentence description, date, category, and image create a more useful listing than a collection of pages with inconsistent labels."
+  },
+  {
+    "objectID": "dashboard.html",
+    "href": "dashboard.html",
+    "title": "MSDM Culminating Experience Dashboard",
+    "section": "",
+    "text": "The capstone project applies digital marketing research to a real nonprofit organization. The project moves from identifying opportunities to implementing, measuring, and evaluating improvements across search visibility, website performance, analytics, and paid-search readiness."
+  },
+  {
+    "objectID": "dashboard.html#project-focus",
+    "href": "dashboard.html#project-focus",
+    "title": "MSDM Culminating Experience Dashboard",
+    "section": "Project focus",
+    "text": "Project focus\n\n\nVisibility\nPrioritize technical SEO, content, local search, and calls to action so people can find and understand Wellness Ranch.\n\n\nMeasurement\nDefine and validate GA4 events, key events, and KPIs for engagement, inquiries, phone interactions, and donations.\n\n\nActivation\nPrepare the organization for Google Ad Grants and a practical digital marketing strategy it can sustain after the project."
+  },
+  {
+    "objectID": "dashboard.html#from-the-cep-report",
+    "href": "dashboard.html#from-the-cep-report",
+    "title": "MSDM Culminating Experience Dashboard",
+    "section": "From the CEP report",
+    "text": "From the CEP report\nThe full cep-group-4.qmd report identifies the core problem clearly: Wellness Ranch has a strong mission and growing community demand, but needs digital infrastructure to be found, measure its impact, and scale its reach.\n\n\n\n\n\n\nNoteExplore the source work\n\n\n\nThe dashboard is designed as a concise portal to the group report. Open the project source to review the complete objectives, analytics framework, research rationale, implementation plan, and references.\nOpen the CEP source file"
+  },
+  {
+    "objectID": "dashboard.html#measurement-framework",
+    "href": "dashboard.html#measurement-framework",
+    "title": "MSDM Culminating Experience Dashboard",
+    "section": "Measurement framework",
+    "text": "Measurement framework\n\n\n\n\n\n\n\n\nStage\nExample KPI\nWhy it matters\n\n\n\n\nAcquisition\nSessions by traffic source\nShows where visitors originate\n\n\nEngagement\nEngagement rate and time\nShows interaction with content\n\n\nService interest\nProgram interactions and phone clicks\nSignals potential service interest\n\n\nInquiries\nSuccessful form submissions\nMeasures completed requests\n\n\nDonations\nConfirmed completed donations\nConnects digital activity to fundraising"
+  },
+  {
+    "objectID": "dashboard.html#next-steps",
+    "href": "dashboard.html#next-steps",
+    "title": "MSDM Culminating Experience Dashboard",
+    "section": "Next steps",
+    "text": "Next steps\n\nAudit the current GA4 configuration and test important user journeys.\nCreate a measurement matrix linking objectives, events, validation methods, and reporting sources.\nCompare baseline and post-implementation results with limitations documented.\nDeliver a prioritized roadmap that Wellness Ranch can maintain."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Brian Vuong",
+    "section": "",
+    "text": "Digital Marketing Portfolio\n\n\n\nI am a digital marketing professional who blends a graphic design foundation with hands-on analytics experience. I use data, strategy, and thoughtful creative execution to help organizations communicate clearly and grow with purpose.\n\nExplore my capstone Get in touch\n\n\n\n\nBV Add headshot here"
+  },
+  {
+    "objectID": "index.html#about-me",
+    "href": "index.html#about-me",
+    "title": "Brian Vuong",
+    "section": "About me",
+    "text": "About me\nMy work sits at the intersection of creative communication and measurable performance. I enjoy translating complex data into useful stories, designing systems that are easy to use, and helping mission-driven teams make better digital decisions.\nI am currently pursuing an M.S. in Digital Marketing at Cal Poly Pomona while collaborating with Wellness Ranch Therapy on a culminating experience project focused on SEO, analytics, website performance, and Google Ad Grants readiness."
+  },
+  {
+    "objectID": "index.html#what-i-bring",
+    "href": "index.html#what-i-bring",
+    "title": "Brian Vuong",
+    "section": "What I bring",
+    "text": "What I bring\n\n\nAnalytics\nGA4, Looker Studio, Tableau, KPI development, traffic analysis, and conversion measurement.\n\n\nCreative direction\nAdobe Illustrator, Photoshop, InDesign, Canva, and on-brand marketing systems.\n\n\nStrategy\nSEO, digital campaigns, content planning, audience insight, and project management."
+  },
+  {
+    "objectID": "index.html#experience",
+    "href": "index.html#experience",
+    "title": "Brian Vuong",
+    "section": "Experience",
+    "text": "Experience\n\n\n\n\n\n\n\n\nRole\nOrganization\nFocus\n\n\n\n\nDigital Marketer\nWellness Ranch Therapy\nSEO, GA4, KPIs, dashboards, and Google Ad Grants\n\n\nGraphic Designer\nIMI Exhibits\nClient-facing marketing assets and outreach databases\n\n\nMarketing Analytics\nTrauma Resource Institute\nAnalytics reporting and site optimization\n\n\nGraphic Designer\nNew Filmmakers LA\nBrand design, social campaigns, and event promotion"
+  },
+  {
+    "objectID": "index.html#education",
+    "href": "index.html#education",
+    "title": "Brian Vuong",
+    "section": "Education",
+    "text": "Education\nM.S. Digital Marketing — Cal Poly Pomona · 2025–2027\nB.A. Graphic Design — California State University, Los Angeles · 2018–2022\n\nLooking ahead\nI am building toward roles where marketing strategy, analytics, and visual storytelling work together to create experiences that are both memorable and accountable."
+  },
+  {
+    "objectID": "css-scss.html",
+    "href": "css-scss.html",
+    "title": "Extending Quarto with CSS and SCSS",
+    "section": "",
+    "text": "Quarto gives a website a strong structure out of the box. CSS and SCSS make that structure feel intentional: they control typography, spacing, color, responsive layouts, and small interaction details without changing the content itself."
+  },
+  {
+    "objectID": "css-scss.html#the-styling-workflow",
+    "href": "css-scss.html#the-styling-workflow",
+    "title": "Extending Quarto with CSS and SCSS",
+    "section": "The styling workflow",
+    "text": "The styling workflow\nQuarto source → HTML structure → styles.css → browser presentation\nThe _quarto.yml file connects the site to styles.css with one line:\nformat:\n  html:\n    css: styles.css"
+  },
+  {
+    "objectID": "css-scss.html#use-design-tokens",
+    "href": "css-scss.html#use-design-tokens",
+    "title": "Extending Quarto with CSS and SCSS",
+    "section": "Use design tokens",
+    "text": "Use design tokens\nThe first section of the stylesheet defines reusable values. This keeps the site consistent and makes a redesign faster.\n:root {\n  --ink: #102a43;\n  --muted: #52606d;\n  --accent: #d97706;\n  --paper: #f7f9fc;\n  --radius: 18px;\n}\nInstead of repeating a color in many selectors, use var(--accent). The result is easier to read and maintain."
+  },
+  {
+    "objectID": "css-scss.html#build-reusable-components",
+    "href": "css-scss.html#build-reusable-components",
+    "title": "Extending Quarto with CSS and SCSS",
+    "section": "Build reusable components",
+    "text": "Build reusable components\nThe homepage uses classes such as .hero, .skill-card, and .btn. These classes separate content from presentation and let the same visual language appear across multiple pages.\n.skill-card {\n  padding: 1.35rem;\n  border: 1px solid #d9e2ec;\n  border-radius: var(--radius);\n  background: white;\n}"
+  },
+  {
+    "objectID": "css-scss.html#make-the-layout-responsive",
+    "href": "css-scss.html#make-the-layout-responsive",
+    "title": "Extending Quarto with CSS and SCSS",
+    "section": "Make the layout responsive",
+    "text": "Make the layout responsive\nCSS Grid handles the desktop layout, while a media query stacks the content on smaller screens:\n@media (max-width: 720px) {\n  .hero,\n  .grid-3,\n  .metrics {\n    grid-template-columns: 1fr;\n  }\n}\nThis approach keeps the page readable on phones without duplicating the content."
+  },
+  {
+    "objectID": "css-scss.html#accessibility-considerations",
+    "href": "css-scss.html#accessibility-considerations",
+    "title": "Extending Quarto with CSS and SCSS",
+    "section": "Accessibility considerations",
+    "text": "Accessibility considerations\nGood styling should support access, not just appearance. Use sufficient color contrast, visible focus states, meaningful heading order, descriptive link text, and readable line lengths. Quarto handles much of the semantic structure; CSS should enhance it rather than hide it."
+  },
+  {
+    "objectID": "css-scss.html#why-scss-can-help",
+    "href": "css-scss.html#why-scss-can-help",
+    "title": "Extending Quarto with CSS and SCSS",
+    "section": "Why SCSS can help",
+    "text": "Why SCSS can help\nSCSS adds nesting, variables, mixins, and partial files to CSS. For a small portfolio, plain CSS is enough. For a larger site, SCSS can organize theme tokens, components, and responsive rules into separate files before compiling them into one stylesheet.\n\n\n\n\n\n\nTipTakeaway\n\n\n\nUse Quarto for content and navigation, and use CSS or SCSS for the visual system. Keeping those responsibilities separate makes the website easier to revise and publish."
+  }
+]

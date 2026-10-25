@@ -1,0 +1,67 @@
+---
+title: "Brian Vuong"
+subtitle: "Digital marketing, analytics, and brand design"
+page-layout: full
+---
+
+::: {.hero}
+::: {.hero-copy}
+<p class="eyebrow">Digital Marketing Portfolio</p>
+
+# Turning insight into meaningful digital experiences
+
+I am a digital marketing professional who blends a graphic design foundation with hands-on analytics experience. I use data, strategy, and thoughtful creative execution to help organizations communicate clearly and grow with purpose.
+
+<div class="hero-actions">
+<a class="btn btn-primary" href="dashboard.qmd">Explore my capstone</a>
+<a class="btn btn-secondary" href="mailto:helloworkbrian@gmail.com">Get in touch</a>
+</div>
+:::
+::: {.portrait aria-label="Photo placeholder for Brian Vuong"}
+<span>BV</span>
+<small>Add headshot here</small>
+:::
+:::
+
+## About me
+
+My work sits at the intersection of creative communication and measurable performance. I enjoy translating complex data into useful stories, designing systems that are easy to use, and helping mission-driven teams make better digital decisions.
+
+I am currently pursuing an M.S. in Digital Marketing at Cal Poly Pomona while collaborating with Wellness Ranch Therapy on a culminating experience project focused on SEO, analytics, website performance, and Google Ad Grants readiness.
+
+## What I bring
+
+::: {.grid-3}
+::: {.skill-card}
+### Analytics
+GA4, Looker Studio, Tableau, KPI development, traffic analysis, and conversion measurement.
+:::
+::: {.skill-card}
+### Creative direction
+Adobe Illustrator, Photoshop, InDesign, Canva, and on-brand marketing systems.
+:::
+::: {.skill-card}
+### Strategy
+SEO, digital campaigns, content planning, audience insight, and project management.
+:::
+:::
+
+## Experience
+
+| Role | Organization | Focus |
+|---|---|---|
+| Digital Marketer | Wellness Ranch Therapy | SEO, GA4, KPIs, dashboards, and Google Ad Grants |
+| Graphic Designer | IMI Exhibits | Client-facing marketing assets and outreach databases |
+| Marketing Analytics | Trauma Resource Institute | Analytics reporting and site optimization |
+| Graphic Designer | New Filmmakers LA | Brand design, social campaigns, and event promotion |
+
+## Education
+
+**M.S. Digital Marketing** — Cal Poly Pomona · 2025–2027  
+**B.A. Graphic Design** — California State University, Los Angeles · 2018–2022
+
+::: {.closing-note}
+### Looking ahead
+
+I am building toward roles where marketing strategy, analytics, and visual storytelling work together to create experiences that are both memorable and accountable.
+:::

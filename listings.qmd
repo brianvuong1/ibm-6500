@@ -1,0 +1,67 @@
+---
+title: "Listings in Quarto"
+subtitle: "A lightweight way to turn portfolio content into a browsable collection"
+---
+
+Listings are Quarto’s built-in way to collect and display pages from a project. They are useful when a portfolio has multiple case studies, reflections, dashboards, or course projects that should be discoverable from one index page.
+
+## What a listing does
+
+A listing reads metadata from matching documents and renders a collection of cards or rows. Each item can show a title, description, date, image, and category. The listing page becomes a reusable portfolio index instead of a manually maintained set of links.
+
+## A minimal listing configuration
+
+```yaml
+listing:
+  contents: projects
+  type: grid
+  fields: [image, title, description, date]
+  sort: "date desc"
+  categories: true
+  filter-ui: true
+```
+
+The `contents` value points to a folder or pattern. `type: grid` creates a visual card layout, while `categories` and `filter-ui` help visitors narrow a larger collection.
+
+## Add metadata to each project
+
+Each portfolio page can include front matter like this:
+
+```yaml
+---
+title: "Wellness Ranch SEO Audit"
+description: "A research-led review of search visibility and conversion opportunities."
+date: 2026-10-01
+categories: [SEO, Analytics, Capstone]
+image: images/seo-audit.png
+---
+```
+
+The metadata becomes the content of the listing card. This is especially helpful for a portfolio because the summary can be written once and reused in navigation, search, and the project page.
+
+## Listing ideas for this portfolio
+
+::: {.grid-3}
+::: {.skill-card}
+### Case studies
+Show the problem, approach, evidence, and outcome for client or class projects.
+:::
+::: {.skill-card}
+### Reflections
+Collect course reflections and explain what each project taught you.
+:::
+::: {.skill-card}
+### Dashboards
+Organize interactive reports, visualizations, and measurement frameworks.
+:::
+:::
+
+## Why listings work well for a portfolio
+
+Listings scale with the work. A new project only needs its own page and metadata; the index updates when the site is rendered. This keeps the homepage focused while giving visitors a structured way to browse deeper work.
+
+::: {.callout-note}
+### Practical tip
+
+Use consistent metadata across every project. A clear title, one-sentence description, date, category, and image create a more useful listing than a collection of pages with inconsistent labels.
+:::
