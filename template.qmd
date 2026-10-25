@@ -26,5 +26,7 @@ execute:
 
 # Appendix
 
+## Project Links
+
 - [GitHub Repository](https://github.com/brianvuong1/ibm-6500)
-- [Published Article Notes on GitHub Pages](https://brianvuong1.github.io/ibm-6500/Sem-01-Take-Notes.html)
+- [Netlify Website](https://incredible-klepon-596fec.netlify.app)
